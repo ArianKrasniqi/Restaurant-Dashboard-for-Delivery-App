@@ -1,0 +1,50 @@
+@font-face {
+  font-family: Gilroy;
+  src: url(../fonts/Gilroy/Gilroy-SemiBold.woff);
+}
+
+.Sidebar {
+  width: 18%;
+  height: 100vh;
+  background-color: #493d55;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+}
+
+.Nav_Vertical {
+  position: relative;
+  margin-top: 30%;
+}
+
+.Sidebar_Title {
+  font-family: Gilroy;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.Nav_Button {
+  display: flex !important;
+  padding: 10px 0px !important;
+  padding-left: 50px !important;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 0px !important;
+  border: none !important;
+  background-color: transparent !important;
+  font-size: 22px !important;
+  font-family: Gilroy;
+  word-spacing: 30px;
+}
+
+.active,
+.Nav_Button:hover {
+  background-color: #16a085 !important;
+}
+
+.Sidebar_Icons {
+  height: 1.5em;
+  width: 1.5em;
+}

@@ -1,0 +1,123 @@
+.Users_Div {
+  display: flex;
+  flex-direction: row;
+}
+
+.Left_Div {
+  width: 18%;
+  height: 100vh;
+}
+
+.Right_Div {
+  width: 82%;
+  height: 100vh;
+  background-color: #e7eaeb;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header_Div {
+  width: 100%;
+  height: auto;
+}
+
+.Users_Elements {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Search_Div {
+  width: 95%;
+  height: 11%;
+  margin-top: 3%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Search_Number {
+  background-color: white;
+  width: 20%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #493d55;
+}
+
+.Search_Number_Input {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  color: #493d55;
+  border: none;
+  display: flex;
+  text-align: center;
+}
+
+.Search_Button{
+  background-color: white;
+  width: 5%;
+  height: 80%;
+  margin-left: 0.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #493d55;
+  cursor: pointer;
+}
+
+.Search_Icon{
+  color: #493d55;
+  height: 50%;
+  width: 50%
+}
+
+.Users_Table {
+  margin-top: 1%;
+  width: 95%;
+  height: 75%;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.Deny_Button {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  cursor: pointer;
+}
+
+.Deny_Button_Line {
+  width: 20px;
+  height: 5px;
+  background-color: white;
+}
+
+.Confirm_Button {
+  width: 30px;
+  height: 30px;
+  background-color: green;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  cursor: pointer;
+}
+
+.Confirm_Button_Line {
+  color: white;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.Hide{
+  display: none;
+}

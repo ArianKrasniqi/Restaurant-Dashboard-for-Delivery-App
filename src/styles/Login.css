@@ -1,0 +1,54 @@
+@font-face {
+  font-family: Gilroy;
+  src: url(../fonts/Gilroy/Gilroy-SemiBold.woff);
+}
+
+@media all and (min-width: 480px) {
+  .Main_Div {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    background-color: #3f4e62;
+  }
+
+  .Login_Div {
+    width: 35%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+
+  .Login_Elements {
+    width: 92%;
+    height: auto;
+  }
+
+  .Login_Text {
+    color: #7ba9d0;
+    display: flex;
+    justify-content: center;
+    font-family: Gilroy;
+  }
+
+  .Button {
+    float: right;
+    width: 40%;
+    border-radius: 0px !important;
+    background-color: #7ba9d0 !important;
+    border: none !important;
+    font-size: 20px !important;
+    font-family: Gilroy !important;
+  }
+
+  .User_Input {
+    border: transparent !important;
+    border-radius: 0px !important;
+    border-bottom: 1px solid black !important;
+    font-size: 20px !important;
+    color: #7ba9d0 !important;
+  }
+}

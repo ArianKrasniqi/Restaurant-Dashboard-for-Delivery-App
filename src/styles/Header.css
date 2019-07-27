@@ -1,0 +1,19 @@
+.Header {
+  background-color: #51445f;
+  width: 100%;
+}
+
+.dropdown-toggle {
+  color: #1d8da4;
+  padding-top: 2px;
+}
+
+.dropdown-toggle::after {
+  color: #1d8da4;
+}
+
+.iconStyle{
+  height: 2em;
+  width: 2em;
+  color: #1D8DA4
+}

@@ -1,0 +1,147 @@
+@font-face {
+  font-family: Gilroy;
+  src: url(../fonts/Gilroy/Gilroy-SemiBold.woff);
+}
+
+
+.Drivers_Div {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+}
+
+.Left_Div {
+  width: 18%;
+  height: 100vh;
+}
+
+.Right_Div {
+  width: 82%;
+  height: 100vh;
+  background-color: #e7eaeb;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header_Div {
+  width: 100%;
+  height: auto;
+}
+
+.Driver_Elements {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Drivers_List {
+  background-color: white;
+  margin-top: 4%;
+  width: 95%;
+  height: 85%;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.Single_Driver {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  width: 85%;
+  height: 35%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Driver_Info {
+  width: 32%;
+  height: 100%;
+  margin-left: 3%;
+  background-color: #418bca;
+  display: flex;
+  flex-direction: row;
+}
+
+.Driver_Info_Left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Driver_Info_Right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.Driver_Icon {
+  width: 5em;
+  height: 5em;
+  color: white;
+}
+
+.Driver_Orders {
+  width: 30%;
+  height: 32%;
+  margin-right: 7%;
+  background-color: #fdb45c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.Driver_Orders_Button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content {
+  width: 217% !important;
+  max-width: 217% !important;
+  margin-top: 18% !important;
+  margin-left: -35% !important;
+  min-height: 500px !important;
+  max-height: 500px !important;
+  overflow-y: auto !important;
+}
+
+.modal-header {
+  align-items: center !important;
+}
+
+.Hap_Button{
+  background-color: transparent;
+  border: none;
+  color: #418bca;
+  outline: none
+}
+
+.Hap_Button:focus {outline:0;}
+
+.Modal_Body_Row{
+  display: flex;
+  justify-content: space-between;
+  font-family: Gilroy;
+  font-size: 1.5em;
+}
+
+.Modal_Body_Product{
+  width: 100%;
+}
+
+.Modal_Body_Price_Total{
+  width: 10%
+}

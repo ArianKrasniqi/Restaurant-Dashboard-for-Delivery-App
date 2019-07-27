@@ -1,0 +1,215 @@
+@font-face {
+  font-family: Gilroy;
+  src: url(../fonts/Gilroy/Gilroy-SemiBold.woff);
+}
+
+.Order_Div {
+  display: flex;
+  flex-direction: row;
+}
+
+.Left_Div {
+  width: 18%;
+  height: 100vh;
+}
+
+.Right_Div {
+  width: 82%;
+  height: 100vh;
+  background-color: #e7eaeb;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header_Div {
+  width: 100%;
+  height: auto;
+}
+
+.Order_Elements {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Delay_Div {
+  width: 95%;
+  height: 11%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+}
+
+.Delay_Text {
+  background-color: white;
+  width: 15%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #493d55;
+}
+
+.Delay_Minutes {
+  background-color: #493d55;
+  color: white;
+  width: 20%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Delay_Minutes_Input {
+  background-color: transparent;
+  color: white;
+  border: none;
+  width: 30%;
+  margin-left: 10%;
+  font-family: Gilroy;
+  text-align: right;
+  padding-right: 10px
+}
+
+.Delay_Done{
+  margin-left: 0.25%;
+  background-color: #493d55;
+  color: white;
+  width: 5%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Delay_Update{
+  margin-left: 0.25%;
+  background-color: white;
+  color: #493d55;
+  width: 5%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pencil_Style {
+  color: white;
+  height: 1.5em;
+  width: 1.5em;
+  cursor: pointer;
+}
+
+.Check_Style{
+  color: #493d55;
+  height: 1.5em;
+  width: 1.5em;
+  cursor: pointer;
+}
+
+.Orders_Table {
+  margin-top: 1%;
+  width: 95%;
+  height: 75%;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.Single_Order {
+  margin-top: 2%;
+  margin-left: 2%;
+  width: 90%;
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Order_Text {
+  padding-left: 1.5%;
+  width: 94%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #16a085;
+  color: white;
+  cursor: pointer;
+}
+
+.Plus_Style {
+  color: #45ccce;
+  height: 3em;
+  width: 3em;
+  cursor: pointer;
+}
+
+.Order_Text_Completed {
+  padding-left: 1.5%;
+  width: 94%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #939393;
+  color: white;
+  cursor: pointer;
+}
+
+.Done_Style {
+  color: #d3b3b3;
+  height: 3em;
+  width: 3em;
+  cursor: pointer;
+}
+
+.Modal_Body {
+  display: flex;
+  flex-direction: row;
+  font-family: Gilroy;
+  font-size: 100%;
+}
+
+.Modal_Footer{
+  font-family: Gilroy;
+  font-size: 150%;
+}
+
+.Modal_Body_Row{
+  width: 100%
+}
+
+.Modal_Body_Price_Total_Order{
+  width: 6%
+}
+
+.Modal_Body_1 {
+  width: 70%;
+}
+
+.Modal_Body_2 {
+  width: 30%;
+  text-align: right;
+}
+
+.Modal_Header {
+  font-family: Gilroy;
+  align-items: center !important;
+}
+
+.modal-footer {
+  justify-content: center !important;
+}
+
+.close {
+  font-size: 4em !important;
+}
+
+.Orders_Plus {
+  height: 4em;
+  width: 4em;
+}
+
+.Orders_Plus:hover {
+  color: #939393;
+}
