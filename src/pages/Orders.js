@@ -9,6 +9,7 @@ import { MdDone } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import openSocket from 'socket.io-client'
 
 const cookies = new Cookies();
 
@@ -21,7 +22,6 @@ class Orders extends React.Component {
     mainErr: "",
     orderInMaking: false,
     rander: false,
-    intervalId: null,
     modalOrder: null,
     orderTotal: "",
     delayChange: false,
@@ -33,14 +33,25 @@ class Orders extends React.Component {
     this.fetchData();
     this.fetchInMakingOrders();
     this.getLatency();
-    const id = setInterval(this.fetchData, 10000)
-    this.setState({
-      intervalId: id
-    })
-  }
+    const socket = openSocket('http://localhost:8000')
 
-  componentWillUnmount() {
-    clearInterval(this.state.intervalId)
+    socket.on('orders', data => {
+      if(data.action === 'newOrder') {
+        this.setState(prevState => {
+          const updatedOrders = [...prevState.orders]
+          updatedOrders.unshift(data.order)
+          return {
+            orders: updatedOrders
+          }
+        })
+      }
+      if(data.action === 'readyToDeliver') {
+        this.setState(prevState => {
+          const updatedOrders = [...prevState.orders]
+          updatedOrders.filter(order => (order._id !== data._id))
+        })
+      }
+    })
   }
 
   handleClose = e => {

@@ -16,6 +16,7 @@
     "react-scripts": "3.0.1",
     "react-validation": "^3.0.7",
     "reactstrap": "^8.0.1",
+    "socket.io-client": "^2.2.0",
     "universal-cookie": "^4.0.2"
   },
   "scripts": {
