@@ -30,13 +30,10 @@ class Archive extends React.Component {
       await this.setState({ activeClass: this.state.class });
     } else if (this.state.class === "day") {
       await this.setState({ activeClass: this.state.class });
-      console.log(this.state.activeClass);
     } else if (this.state.class === "week") {
       await this.setState({ activeClass: this.state.class });
-      console.log(this.state.activeClass);
     } else if (this.state.class === "month") {
       await this.setState({ activeClass: this.state.class });
-      console.log(this.state.activeClass);
     }
     this.archivedOrders();
   };

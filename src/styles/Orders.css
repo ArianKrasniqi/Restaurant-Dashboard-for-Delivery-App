@@ -72,6 +72,18 @@
   padding-right: 10px
 }
 
+.Delay_Minutes_Input_Change{
+  background-color: transparent;
+  color: white;
+  border: none;
+  width: 30%;
+  margin-left: 10%;
+  font-family: Gilroy;
+  text-align: right;
+  padding-right: 10px;
+  border-bottom: 1px solid white;
+}
+
 .Delay_Done{
   margin-left: 0.25%;
   background-color: #493d55;
@@ -212,4 +224,8 @@
 
 .Orders_Plus:hover {
   color: #939393;
+}
+
+.hide{
+  display: none
 }
