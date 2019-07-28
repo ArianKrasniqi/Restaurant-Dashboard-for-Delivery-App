@@ -47,8 +47,21 @@ class Orders extends React.Component {
       }
       if(data.action === 'readyToDeliver') {
         this.setState(prevState => {
-          const updatedOrders = [...prevState.orders]
-          updatedOrders.filter(order => (order._id !== data._id))
+          const orders = prevState.ordersInMaking.filter(order => (order._id !== data.order._id))
+          return {
+            ordersInMaking: orders
+          }
+        })
+      }
+      if (data.action === 'inMaking') {
+        this.setState(prevState => {
+          const updated = prevState.orders.filter(order => (order._id !== data.order._id))
+          const updatedInMakingOrders = [...prevState.ordersInMaking]
+          updatedInMakingOrders.unshift(data.order)
+          return {
+            orders: updated,
+            ordersInMaking: updatedInMakingOrders
+          }
         })
       }
     })
@@ -67,7 +80,6 @@ class Orders extends React.Component {
   };
 
   changeDelay = async (e) => {
-    console.log("E ndroj" + this.state.delayChange)
     await this.setState({
       delayChange: !this.state.delayChange
     })
@@ -113,6 +125,7 @@ class Orders extends React.Component {
           mainErr: "Username është gabim!"
         });
       }
+      console.log(error)
     }
   };
 
@@ -141,13 +154,13 @@ class Orders extends React.Component {
       const api_call = await axios.patch(
         `http://localhost:8000/orders/inMaking/${orderId}`
       );
-      window.location.reload();
     } catch (error) {
-      if (error.response.status === 500) {
-        this.setState({
-          mainErr: "Username është gabim!"
-        });
-      }
+      // if (error.response.status === 500) {
+      //   this.setState({
+      //     mainErr: "Username është gabim!"
+      //   });
+      // }
+      console.log(error)
     }
   };
 
@@ -157,18 +170,16 @@ class Orders extends React.Component {
       const api_call = await axios.patch(
         `http://localhost:8000/orders/done/${orderId}`
       );
-      window.location.reload();
     } catch (error) {
-      if (error.response.status === 500) {
-        this.setState({
-          mainErr: "Username është gabim!"
-        });
-      }
+      // if (error.response.status === 500) {
+      //   this.setState({
+      //     mainErr: "Username është gabim!"
+      //   });
+      // }
     }
   };
 
   render() {
-    console.log(this.state.orders);
     return (
       <div className="Order_Div">
         <div className="Left_Div">
@@ -255,7 +266,7 @@ class Orders extends React.Component {
           <Modal.Body className="Modal_Body">
             {this.state.modalOrder !== null ?
               this.state.modalOrder.items.map(item =>
-                <tr className="Modal_Body_Row">
+                <tr className="Modal_Body_Row" key={item.productId}>
                   <td><div className="Modal_Body_Product">{`${item.name} $`}</div></td>
                   <td><div className="Modal_Body_Price">{`${item.price} $`}</div></td>
                 </tr>
