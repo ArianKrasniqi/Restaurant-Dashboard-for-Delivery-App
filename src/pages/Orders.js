@@ -48,7 +48,7 @@ class Orders extends React.Component {
       }
       if (data.action === 'readyToDeliver') {
         this.setState(prevState => {
-          const orders = prevState.ordersInMaking.filter(order => (order._id !== data.order._id))
+          const orders = prevState.ordersInMaking.filter(order => (order._id !== data.order.order._id))
           return {
             ordersInMaking: orders
           }
