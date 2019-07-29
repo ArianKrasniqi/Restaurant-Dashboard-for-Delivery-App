@@ -44,17 +44,19 @@ class Users extends React.Component {
   }
 
   backFilterByPhone = async () => {
-    await this.setState({
+    this.setState({
       phoneSearchValue: "",
       usersByPhone: null,
       searchMode: false
-    })
+    });
   }
 
   filterByPhone = async () => {
+
     this.setState({
       searchMode: true
     })
+
     try {
       const phone = this.state.phoneSearchValue;
       const api_call = await axios.get(
@@ -69,7 +71,7 @@ class Users extends React.Component {
     } catch (error) {
       if (error.response.status === 500) {
         this.setState({
-          mainErr: "Username është gabim!",
+          mainErr: "Username është gabim!"
         });
       }
     }
@@ -132,6 +134,7 @@ class Users extends React.Component {
 
 
   render() {
+    console.log(this.state.phoneSearchValue)
     return (
       <div className="Users_Div">
 
@@ -149,11 +152,14 @@ class Users extends React.Component {
 
             <div className="Search_Div">
 
+              <div className={`User_NotFound ${this.state.usersByPhone !== undefined ? "Hide" : ""}`} >User not found!</div>
+
               <div className="Search_Number">
                 <input
                   className="Search_Number_Input"
                   placeholder="Kërko Nr. tel"
                   onChange={e => this.savePhoneInput(e)}
+                  value={this.state.phoneSearchValue}
                 />
               </div>
 

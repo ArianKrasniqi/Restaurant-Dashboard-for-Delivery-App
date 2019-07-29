@@ -25,7 +25,7 @@ class Orders extends React.Component {
     modalOrder: null,
     orderTotal: "",
     delayChange: false,
-    delayTime: "",
+    // delayTime: "",
     setDelayTime: ""
   };
 
@@ -141,10 +141,10 @@ class Orders extends React.Component {
       const api_call = await axios.get(
         "http://localhost:8000/latency/getLatency"
       );
-      const delayTime = api_call.data.time;
+      const setDelayTime = api_call.data.time;
 
       this.setState({
-        delayTime
+        setDelayTime
       });
     } catch (error) {
       if (error.response.status === 500) {
@@ -156,18 +156,14 @@ class Orders extends React.Component {
   };
 
   setLatency = async () => {
-    const body = {
-      "time": this.state.setDelayTime
-    }
+    const adminToken = cookies.get("adminToken");
     try {
       const api_call = await axios.patch(
-        "http://localhost:8000/latency/updateLatency", { body }
+        "http://localhost:8000/latency/updateLatency", {
+          time: this.state.setDelayTime
+        }
       );
-      const delayTime = api_call.data.time;
-
-      this.setState({
-        delayTime
-      });
+      await this.changeDelay();
     } catch (error) {
       if (error.response.status === 500) {
         this.setState({
@@ -222,27 +218,27 @@ class Orders extends React.Component {
 
             <div className="Delay_Div">
               <div className="Delay_Text">
-                <h3>Vonesa:</h3>
+                <h3>Delay:</h3>
               </div>
 
-              <div className={`Delay_Minutes ${!this.state.delayChange ? "" : "hide"}`}>
+              <div className={`Delay_Minutes ${this.state.delayChange ? "hide" : ""}`}>
                 <h3>
                   <input
                     type="text"
-                    maxlength="3"
-                    value={this.state.delayTime}
+                    maxLength="3"
+                    value={this.state.setDelayTime}
                     className="Delay_Minutes_Input"
                   />
                   min
                 </h3>
               </div>
 
-              <div className={`Delay_Minutes ${!this.state.delayChange ? "hide" : ""}`}>
+              <div className={`Delay_Minutes ${this.state.delayChange ? "" : "hide"}`}>
                 <h3>
                   <input
                     type="text"
-                    onChange={e => this.delayUpdate()}
-                    maxlength="3"
+                    onChange={e => this.delayUpdate(e)}
+                    maxLength="3"
                     className="Delay_Minutes_Input_Change"
                   />
                   min
@@ -253,12 +249,16 @@ class Orders extends React.Component {
                 {!this.state.delayChange ?
                   <GoPencil className="Pencil_Style" onClick={e => this.changeDelay()} />
                   :
-                  <FaCheck className="Check_Style" onClick={e => this.changeDelay()} />
+                  <FaCheck className="Check_Style" onClick={e => this.setLatency()} />
                 }
               </div>
 
             </div>
             <div className="Orders_Table">
+
+              <div className={`NotFound_Div ${(this.state.orders.length == 0 && this.state.ordersInMaking.length == 0) ? "" : "Hide"}`} >
+                <div className="Order_NotFound" >No orders right now!</div>
+              </div>
 
               {this.state.orders.map(order => (
                 <div className="Single_Order" key={order._id}>

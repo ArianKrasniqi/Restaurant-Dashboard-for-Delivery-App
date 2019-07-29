@@ -118,6 +118,13 @@
   width: 1.5em;
 }
 
+.User_NotFound{
+  color: red;
+  align-self: center;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
 .Hide{
   display: none;
 }
