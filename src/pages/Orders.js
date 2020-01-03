@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import "../styles/Orders.css";
 import { GoPencil } from "react-icons/go";
 import { GoPlus } from "react-icons/go";
@@ -30,8 +30,17 @@ class Orders extends React.Component {
   };
 
 
+
+ componentWillUnmount() {
+   clearInterval(this.interval);
+ }
+
+
   componentDidMount() {
     this.fetchData();
+    this.interval = setInterval(() => {
+      this.fetchData();
+    }, 5000);
     this.fetchInMakingOrders();
     this.getLatency();
     const socket = openSocket('http://localhost:8000')
@@ -156,7 +165,7 @@ class Orders extends React.Component {
   };
 
   setLatency = async () => {
-    const adminToken = cookies.get("adminToken");
+    // const adminToken = cookies.get("adminToken");
     try {
       const api_call = await axios.patch(
         "http://localhost:8000/latency/updateLatency", {

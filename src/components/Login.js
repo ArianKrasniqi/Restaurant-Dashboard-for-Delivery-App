@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { Button, Label, Input } from "reactstrap";
+import { Button, Label } from "reactstrap";
 import "../styles/Login.css";
 import axios from "axios";
 import Cookies from "universal-cookie";
-import { async } from "q";
 
 const cookies = new Cookies();
 
@@ -23,11 +22,17 @@ export default class Login extends Component {
   }
 
   handleUsername = (username, type) => {
-    this.setState({ username: username.target.value });
+    this.setState({
+      username: username.target.value,
+      mainErr: ""
+    });
   };
 
   handlePassword = password => {
-    this.setState({ password: password.target.value });
+    this.setState({
+      password: password.target.value,
+      mainErr: ""
+    });
   };
 
   login = async () => {
@@ -86,26 +91,28 @@ export default class Login extends Component {
           <div className="Login_Elements">
             <h1 className="Login_Text">Log In</h1>
             <br />
-            <Input
+            <input
               className="User_Input"
               type="text"
               placeholder="Username"
               onChange={(username, type) => this.handleUsername(username, type)}
             />
-            <Label>{this.state.usernameError}</Label>
+            <Label>{this.state.username === "" ? this.state.usernameError : ""}</Label>
             <br />
-            <Input
+            <input
               className="User_Input"
               type="password"
               placeholder="Password"
               onChange={password => this.handlePassword(password)}
             />
-            <Label>{this.state.passwordError}</Label>
+            <Label>{this.state.password === "" ? this.state.passwordError : ""}</Label>
             <br />
-            <Label>{this.state.mainErr}</Label>
-            <Button className="Button" onClick={this.login}>
-              Log In
-            </Button>
+            <div className="Button_MainErr">
+              <Label className="Main_Err">{this.state.mainErr}</Label>
+              <Button className="Button" onClick={this.login}>
+                Log In
+              </Button>
+            </div>
           </div>
         </div>
       </div>

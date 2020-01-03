@@ -3,11 +3,8 @@ import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import { Table, Modal } from "react-bootstrap";
 import axios from "axios";
-import Cookies from "universal-cookie";
 import "../styles/Drivers.css";
 import { GiSteeringWheel } from "react-icons/gi";
-
-const cookies = new Cookies();
 
 class Drivers extends React.Component {
   state = {

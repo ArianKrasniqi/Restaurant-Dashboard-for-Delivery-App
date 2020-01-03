@@ -31,8 +31,10 @@ class Users extends React.Component {
     const phoneNum = phone;
     const userBannStatus = bannStatus;
     this.setState({
-      phoneNum: phone,
-      userBannStatus: bannStatus
+      phoneNum: phoneNum,
+      userBannStatus: userBannStatus
+      // phoneNum: phone,
+      // userBannStatus: bannStatus
     })
     this.bannOrUnbannUser(this.state.phoneNum, this.state.userBannStatus);
   }

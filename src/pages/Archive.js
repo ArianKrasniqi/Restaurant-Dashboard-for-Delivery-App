@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import "../styles/Archive.css";
 import axios from "axios";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class Archive extends React.Component {
   state = {
@@ -189,32 +189,3 @@ class Archive extends React.Component {
 }
 
 export default Archive;
-
-{/* <Modal
-show={this.state.archiveShowFromHap}
-onHide={this.handleCloseHap}
-dialogClassName="modal-90w"
-aria-labelledby="example-custom-modal-styling-title"
->
-<Modal.Header closeButton>
-  <Modal.Title id="example-custom-modal-styling-title">
-    User Orders
-  </Modal.Title>
-</Modal.Header>
-
-<Modal.Body >
-  {this.state.userOrder.map(order =>
-    <tr className="Modal_Body_Row">
-      <td><div className="Modal_Body_Product">{order.name}</div></td>
-      <td><div className="Modal_Body_Price">{`${order.price} $`}</div></td>
-    </tr>
-  )}
-</Modal.Body>
-
-
-<br />
-<Modal.Footer className="Modal_Body">
-  <div className="Modal_Body_Product Footer">Totali</div>
-  <div className="Modal_Body_Price_Total">{`${this.state.orderTotal} $`}</div>
-</Modal.Footer>
-</Modal> */}
